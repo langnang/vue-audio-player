@@ -2,6 +2,7 @@
   "name": "@langnang/vue-audio-player",
   "version": "0.1.0",
   "description": "Vue 音频播放器组件",
+  "main": "lib/vue-audio-player.umd.min.js",
   "private": false,
   "keywords": [
     "langnang",
@@ -15,7 +16,8 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name vue-audio-player ./src/audio-player/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -50,12 +52,14 @@
     "last 2 versions",
     "not dead"
   ],
-  "main": "babel.config.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/langnang"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/langnang/vue-audio-player.git"
   },
-  "author": "",
+  "author": "langnang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/langnang/vue-audio-player/issues"
