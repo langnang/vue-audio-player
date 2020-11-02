@@ -160,11 +160,6 @@
     <audio
       ref="audio"
       class="audio-player__audio"
-      :autoplay="autoPlay"
-      controls
-      :loop="loop"
-      :muted="muted"
-      :preload="preLoad"
       :src="audioList[currentIndex]"
       @loadstart="onLoadStart"
       @progress="onProgress"
@@ -183,26 +178,6 @@ export default {
   name: 'AudioPlayer',
   components: {},
   props: {
-    // 是否音频就绪后马上播放
-    autoPlay: {
-      type: Boolean,
-      default: false,
-    },
-    // 是否循环播放音频
-    loop: {
-      type: Boolean,
-      default: false,
-    },
-    // 是否静音
-    muted: {
-      type: Boolean,
-      default: false,
-    },
-    // 是否预加载音频
-    preLoad: {
-      type: Boolean,
-      default: false,
-    },
     // 播放列表
     audioList: {
       type: Array,
@@ -293,6 +268,9 @@ export default {
     // 歌曲已经载入完全
     onCanPlayThrough() {
       console.log("onCanPlayThrough");
+      if (this.autoPlay) {
+        this.play();
+      }
     },
     // 音频的播放是否已结束
     onEnded() {
