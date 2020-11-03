@@ -1,122 +1,106 @@
 .audio-player {
-  position: relative;
 
-  .audio-info {
-    .audio-info__cover {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      overflow: hidden;
+  .audio-controls {
+    position: relative;
+    padding: 12px 10px;
+    height: 36px;
+    line-height: 36px;
+    background-color: aliceblue;
+    border-radius: 10px;
 
-      &.playing {
-        -webkit-animation: rotate 8s linear 0s infinite forwards;
-        animation: rotate 8s linear 0s infinite forwards;
+    &>[class^=audio-controls] {
+      display: inline-block;
+      height: 36px;
+      line-height: 36px;
+      vertical-align: middle;
+      margin: 0 5px;
+
+      &.active {
+        background-color: #ccc;
       }
 
-      img {
-        width: 100%;
+      &>svg {
+        width: 26px;
+        height: 26px;
+        padding: 5px 0;
       }
     }
 
-    .audio-info__lyric {
+    .audio-controls__time {
+      width: 100px;
+      text-align: center;
+    }
+
+    .audio-controls__progress {
+      display: inline-block;
+      width: calc(100% - 320px);
+      height: 36px;
+      line-height: 36px;
+      position: relative;
+      margin: 0 10px;
+
+      .audio-controls__progress-outer {
+        height: 2px;
+        background-color: #cccccc;
+        position: relative;
+        margin-top: 17px;
+      }
+
+      .audio-controls__progress-inner {
+        height: 2px;
+        background-color: #000000;
+        transition: width 0.5s;
+      }
+
+      .audio-controls__progress-point {
+        height: 10px;
+        background-color: #000000;
+        width: 10px;
+        border-radius: 50%;
+        position: absolute;
+        top: -4px;
+        margin-left: -4px;
+        transition: left 0.5s;
+      }
+    }
+
+    .audio-controls__volume {
+
+      .audio-controls__volume-wrapper {
+        display: inline-block;
+        height: 36px;
+        margin: 0 5px;
+      }
+
+      .audio-controls__volume-outer {
+        margin-top: 18px;
+        width: 100px;
+        height: 2px;
+        background: #ccc;
+        position: relative;
+      }
+
+      .audio-controls__volume-inner {
+        height: 2px;
+        background-color: #000000;
+        transition: width 0.5s;
+      }
+
+      .audio-controls__volume-point {
+        height: 10px;
+        background-color: #000000;
+        width: 10px;
+        border-radius: 50%;
+        position: absolute;
+        top: -4px;
+        margin-left: -4px;
+        transition: left 0.5s;
+      }
+    }
+
+    .audio-player__audio {
       display: none;
     }
-  }
 
-
-}
-
-.audio-controls {
-
-  width: 100%;
-
-  .audio-controls__group {
-    display: inline-block;
-    background: #cccccc;
-
-    & > * {
-      display: inline-block;
-    }
-  }
-
-  .audio-controls__previous,
-  .audio-controls__start,
-  .audio-controls__pause,
-  .audio-controls__next {
-    width: 36px;
-    height: 36px;
-
-    &:hover {
-      background-color: #cccccc;
-    }
-
-    svg {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .audio-controls__progress {
-    position: absolute;
-    display: none;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-
-    & > div {
-      display: inline-block;
-    }
-
-    .audio-info__progress {
-      width: 80%;
-
-      .audio-info__progress-outer {
-        width: 100%;
-        background-color: #cccccc;
-        height: 100%;
-      }
-
-      .audio-info__progress-inner {
-        background-color: #2c3e50;
-        height: 5px;
-      }
-
-      .audio-info__progress-pointer {
-        height: 10px;
-        width: 10px;
-        border-radius: 10px;
-      }
-    }
-
-  }
-}
-
-.audio-player__audio {
-  width: 100%;
-  display: none;
-}
-
-@-webkit-keyframes rotate {
-  0% {
-    -webkit-transform: rotateZ(0);
-    transform: rotateZ(0);
-  }
-
-  100% {
-    -webkit-transform: rotateZ(360deg);
-    transform: rotateZ(360deg);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    -webkit-transform: rotateZ(0);
-    transform: rotateZ(0);
-  }
-
-  100% {
-    -webkit-transform: rotateZ(360deg);
-    transform: rotateZ(360deg);
   }
 }

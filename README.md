@@ -9,36 +9,62 @@ npm i -S @langnang/vue-audio-player
 ```
 
 ## 按需引入
+
 ```javascript
-import { AudioPlayer } from '@langnang/vue-audio-player'
-import '@langnang/vue-audio-player/lib/vue-audio-player.css'
+import { AudioPlayer } from "@langnang/vue-audio-player";
+import "@langnang/vue-audio-player/lib/vue-audio-player.css";
 
 components: {
-  AudioPlayer
+  AudioPlayer;
 }
 ```
 
 ## 全局引入
-```javascript
-import AudioPlayer from '@langnang/vue-audio-player'
-import '@langnang/vue-audio-player/lib/vue-audio-player.css'
 
-Vue.use(AudioPlayer)
+```javascript
+import AudioPlayer from "@langnang/vue-audio-player";
+import "@langnang/vue-audio-player/lib/vue-audio-player.css";
+
+Vue.use(AudioPlayer);
 ```
 
 ## 使用
 
-## Prop
+## Attributes
 
-|参数|说明|类型|默认值|
-|---|---|---|---|
-|---|---|---|---|
+| 参数 | 说明         | 类型    | 默认值 |
+| ---- | ------------ | ------- | ------ |
+| src  | 音频源       | String  | -      |
+| loop | 是否循环播放 | Boolean | false  |
 
-## Event
+## Events
 
-|事件|说明|回调|
-|---|---|---|
-|---|---|---|
+| 事件            | 说明     | 回调          |
+| --------------- | -------- | ------------- |
+| playing         | 播放中   | (currentTime) |
+| ended           | 结束     |
+| volume-change   | 音量修改 | (volume)      |
+| progress-change | 进度修改 | (currentTime) |
+
+## Methods
+
+| 方法         | 说明   | 回调 |
+| ------------ | ------ | ---- |
+| before-play  | 播放前 |
+| play         | 播放   |
+| before-pause | 暂停前 |
+| pause        | 暂停   |
+
+## Data
+
+| 参数         | 说明               | 类型    | 默认值 |
+| ------------ | ------------------ | ------- | ------ |
+| currentIndex | 当前播放的音频索引 | Number  | 0      |
+| isPlaying    | 音频是否正在播放   | Boolean | false  |
+| duration     | 音频持续时间       | Number  | -      |
+| currentTime  | 音频当前播放时间   | Number  | -      |
+
+## Slots
 
 ## 参考
 
