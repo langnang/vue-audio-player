@@ -1,6 +1,6 @@
 {
   "name": "@langnang/vue-audio-player",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Vue 音频播放器组件",
   "main": "./lib/vue-audio-player.umd.min.js",
   "private": false,
@@ -39,8 +39,8 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:vue/recommended"
     ],
     "parserOptions": {
       "parser": "babel-eslint"

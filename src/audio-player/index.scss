@@ -22,7 +22,11 @@
       &>svg {
         width: 26px;
         height: 26px;
-        padding: 5px 0;
+        margin: 5px 0;
+
+        &.inactive {
+          opacity: 0.4;
+        }
       }
     }
 
@@ -33,7 +37,6 @@
 
     .audio-controls__progress {
       display: inline-block;
-      width: calc(100% - 320px);
       height: 36px;
       line-height: 36px;
       position: relative;

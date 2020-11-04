@@ -32,32 +32,34 @@ Vue.use(AudioPlayer);
 
 ## Attributes
 
-| 参数      | 说明               | 类型    | 默认值 |
-| --------- | ------------------ | ------- | ------ |
-| src       | 音频源             | String  | -      |
-| loop      | 是否循环播放       | Boolean | false  |
-| show-next | 是否显示上一首按钮 | Boolean | false  |
-| show-prev | 是否显示下一首按钮 | Boolean | false  |
+| 参数      | 说明                   | 类型    | 默认值 |
+| --------- | ---------------------- | ------- | ------ |
+| src       | 单曲音频源             | String  | -      |
+| loop      | 是否单曲音频源循环播放 | Boolean | false  |
+| src-list  | 多曲音频源             | Array   | -      |
+| src-key   | 多曲音频源关键字       | String  | -      |
+| show-next | 是否显示上一首按钮     | Boolean | false  |
+| show-prev | 是否显示下一首按钮     | Boolean | false  |
+| show-mode | 是否显示模式切换按钮   | Boolean | false  |
 
 ## Events
 
-| 事件            | 说明     | 回调          |
-| --------------- | -------- | ------------- |
-| playing         | 播放中   | (currentTime) |
-| ended           | 结束     |
-| volume-change   | 音量修改 | (volume)      |
-| progress-change | 进度修改 | (currentTime) |
+| 事件            | 说明                | 回调        |
+| --------------- | ------------------- | ----------- |
+| playing         | 播放中              | currentTime |
+| ended           | 音频/列表播放结束后 | -           |
+| volume-change   | 音量修改            | volume      |
+| progress-change | 进度修改            | currentTime |
+| mode-change     | 模式修改            | mode        |
 
 ## Methods
 
-| 方法         | 说明   | 回调 |
-| ------------ | ------ | ---- |
-| before-play  | 播放前 | -    |
-| play         | 播放   | -    |
-| before-pause | 暂停前 | -    |
-| pause        | 暂停   | -    |
-| play-prev    | 上一首 | -    |
-| play-next    | 下一首 | -    |
+| 方法      | 说明   | 回调 |
+| --------- | ------ | ---- |
+| play      | 播放   | -    |
+| pause     | 暂停   | -    |
+| play-prev | 上一首 | -    |
+| play-next | 下一首 | -    |
 
 ## Data
 
