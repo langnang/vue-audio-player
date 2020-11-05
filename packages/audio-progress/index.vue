@@ -54,10 +54,6 @@ export default {
   },
   methods: {
     onClick: function(e) {
-      console.log(e);
-      console.log(this.$refs.progress);
-      console.log(this.$refs.progress.offsetX);
-      console.log(this.$refs.progress.offsetWidth);
       this.selfPercent = (e.offsetX / this.$refs.progress.offsetWidth) * 100;
       this.$emit("change", this.selfPercent);
     },
