@@ -1,6 +1,6 @@
 {
   "name": "@langnang/vue-audio-player",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Vue 音频播放器组件",
   "main": "lib/vue-audio-player.umd.min.js",
   "private": false,
