@@ -53,9 +53,6 @@
     "last 2 versions",
     "not dead"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/langnang"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/langnang/vue-audio-player.git"
