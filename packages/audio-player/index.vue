@@ -274,7 +274,7 @@ export default {
       volume: 50, // 音频音量
       currentTime: 0, // 音频当前播放位置
       duration: 0, // 音频长度
-      playMode: "single", // 播放模式：单曲播放，单曲循环，顺序播放，循环播放，随机播放
+      playMode: this.loop ? "single-loop" : "single", // 播放模式：单曲播放，单曲循环，顺序播放，循环播放，随机播放
     };
   },
   computed: {
