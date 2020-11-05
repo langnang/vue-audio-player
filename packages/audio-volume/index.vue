@@ -36,7 +36,11 @@
         p-id="1815"
       />
     </svg>
-    <div ref="volume" class="audio-controls__volume-wrapper" @click="onClick">
+    <div
+      ref="volume"
+      class="audio-controls__volume-wrapper"
+      @click.self="onClick"
+    >
       <div class="audio-controls__volume-outer">
         <div
           class="audio-controls__volume-inner"
