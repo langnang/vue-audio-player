@@ -36,11 +36,16 @@
         p-id="1815"
       />
     </svg>
-    <div ref="volume" class="audio-controls__volume-wrapper" @click="onClick">
-      <div class="audio-controls__volume-outer">
+    <div
+      ref="volume"
+      class="audio-controls__volume-wrapper"
+      @click.self="onClick"
+    >
+      <div class="audio-controls__volume-outer" @click.self="onClick">
         <div
           class="audio-controls__volume-inner"
           :style="{ width: selfMuted ? 0 : selfVolume + '%' }"
+          @click.self="onClick"
         />
         <div
           class="audio-controls__volume-point"
@@ -82,6 +87,7 @@ export default {
     },
     onClick: function(e) {
       this.selfVolume = (e.offsetX / this.$refs.volume.offsetWidth) * 100;
+      this.$emit("change", this.selfVolume);
     },
   },
 };

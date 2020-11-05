@@ -1,5 +1,5 @@
 <template>
-  <div class="audio-controls__progress" @click="onClick">
+  <div class="audio-controls__progress" @click.self="onClick">
     <!--音频信息：缓冲-->
     <div v-if="false" class="audio-loading">
       <svg
@@ -20,10 +20,15 @@
       </svg>
     </div>
 
-    <div ref="progress" class="audio-controls__progress-outer">
+    <div
+      ref="progress"
+      class="audio-controls__progress-outer"
+      @click.self="onClick"
+    >
       <div
         class="audio-controls__progress-inner"
         :style="{ width: percent + '%' }"
+        @click.self="onClick"
       />
       <div
         class="audio-controls__progress-point"
