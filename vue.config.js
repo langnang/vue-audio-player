@@ -1,4 +1,10 @@
 module.exports = {
+  outputDir: "dist",
+  publicPath:
+    process.env.NODE_ENV === "production" ? "/vue-audio-player/" : "/",
+  devServer: {
+    port: 9200, // 自定义端口
+  },
   // 修改 src 为 examples
   pages: {
     index: {
