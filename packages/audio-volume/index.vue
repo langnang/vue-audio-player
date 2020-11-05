@@ -41,10 +41,11 @@
       class="audio-controls__volume-wrapper"
       @click.self="onClick"
     >
-      <div class="audio-controls__volume-outer">
+      <div class="audio-controls__volume-outer" @click.self="onClick">
         <div
           class="audio-controls__volume-inner"
           :style="{ width: selfMuted ? 0 : selfVolume + '%' }"
+          @click.self="onClick"
         />
         <div
           class="audio-controls__volume-point"

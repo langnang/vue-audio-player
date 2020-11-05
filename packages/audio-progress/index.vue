@@ -20,10 +20,15 @@
       </svg>
     </div>
 
-    <div ref="progress" class="audio-controls__progress-outer">
+    <div
+      ref="progress"
+      class="audio-controls__progress-outer"
+      @click.self="onClick"
+    >
       <div
         class="audio-controls__progress-inner"
         :style="{ width: percent + '%' }"
+        @click.self="onClick"
       />
       <div
         class="audio-controls__progress-point"
