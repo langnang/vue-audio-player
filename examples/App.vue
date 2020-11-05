@@ -8,13 +8,9 @@
 </template>
 
 <script>
-import AudioPlayer from "@/audio-player";
-
 export default {
   name: "App",
-  components: {
-    AudioPlayer,
-  },
+  components: {},
   data() {
     return {
       audioList: [

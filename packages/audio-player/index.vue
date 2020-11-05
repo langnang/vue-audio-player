@@ -222,8 +222,8 @@
 </template>
 
 <script>
-import AudioProgress from "./progress";
-import AudioVolume from "./volume";
+import AudioProgress from "./../audio-progress";
+import AudioVolume from "./../audio-volume";
 export default {
   name: "AudioPlayer",
   components: {
