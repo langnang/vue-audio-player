@@ -82,6 +82,7 @@ export default {
     },
     onClick: function(e) {
       this.selfVolume = (e.offsetX / this.$refs.volume.offsetWidth) * 100;
+      this.$emit("change", this.selfVolume);
     },
   },
 };
