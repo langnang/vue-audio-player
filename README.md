@@ -33,7 +33,11 @@ Vue.use(AudioPlayer);
 ```html
 <template>
   <div>
-    <AudioPlayer :src-list="audioList" />
+    <AudioPlayer
+      :src-list="audioList"
+      @play-prev="onPlayPrev"
+      @play-next="onPlayNext"
+    />
   </div>
 </template>
 
