@@ -70,6 +70,7 @@
           class="audio-controls__volume-point"
           :style="{ left: selfMuted ? 0 : selfVolume + '%' }"
           :title="selfMuted ? 0 : selfVolume"
+          v-drag:callback="onDrag"
         />
       </div>
     </div>
@@ -77,6 +78,7 @@
 </template>
 
 <script>
+import directives from "./../directives";
 export default {
   name: "AudioVolume",
   props: {
@@ -108,6 +110,11 @@ export default {
       this.selfVolume = (e.offsetX / this.$refs.volume.offsetWidth) * 100;
       this.$emit("change", this.selfVolume);
     },
+    onDrag: function (percent) {
+      this.selfVolume = percent;
+      this.$emit("change", this.selfVolume);
+    },
   },
+  directives,
 };
 </script>
