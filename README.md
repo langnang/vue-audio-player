@@ -15,7 +15,7 @@ import { AudioPlayer } from "@langnang/vue-audio-player";
 import "@langnang/vue-audio-player/lib/vue-audio-player.css";
 
 components: {
-  AudioPlayer;
+  AudioPlayer
 }
 ```
 
