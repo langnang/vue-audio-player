@@ -2,7 +2,7 @@
   "name": "@langnang/vue-audio-player",
   "description": "Vue 音频播放器组件",
   "homepage": "https://github.com/langnang/vue-audio-player#readme",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "main": "lib/vue-audio-player.umd.min.js",
   "private": false,
   "keywords": [
