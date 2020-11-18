@@ -12,6 +12,10 @@
 
 ### 0.1.9
 
+#### New Feature
+
+- [进度、音量拖拽效果](https://github.com/langnang/vue-audio-player/issues/5)
+
 ### 0.1.8
 
 ## New Feature
