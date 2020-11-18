@@ -33,12 +33,14 @@
       <div
         class="audio-controls__progress-point"
         :style="{ left: percent + '%' }"
+        v-drag:callback="onDrag"
       />
     </div>
   </div>
 </template>
 
 <script>
+import directives from "./../directives";
 export default {
   name: "AudioProgress",
   props: {
@@ -57,6 +59,11 @@ export default {
       this.selfPercent = (e.offsetX / this.$refs.progress.offsetWidth) * 100;
       this.$emit("change", this.selfPercent);
     },
+    onDrag: function(percent) {
+      this.selfPercent = percent;
+      this.$emit("change", this.selfPercent);
+    },
   },
+  directives,
 };
 </script>
