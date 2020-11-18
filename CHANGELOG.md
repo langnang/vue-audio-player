@@ -14,11 +14,14 @@
 
 ## New Feature
 
-- [大音量，小音量，音量为 0 时的图标切换](https://github.com/langnang/vue-audio-player/issues/10)
-
 ## Bug
 
+- [大音量，小音量，音量为 0 时的图标切换](https://github.com/langnang/vue-audio-player/issues/10)
+- [props 播放模式选择](https://github.com/langnang/vue-audio-player/issues/9)
+
 ### 0.1.5
+
+## New Feature
 
 - 播放、暂停
 - 上一首、下一首

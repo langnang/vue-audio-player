@@ -1,7 +1,7 @@
 <template>
   <div class="audio-controls__volume">
     <svg
-      v-if="!selfMuted"
+      v-if="!selfMuted && selfVolume >= 50"
       t="1604492613740"
       class="icon"
       viewBox="0 0 1024 1024"
@@ -19,7 +19,26 @@
       />
     </svg>
     <svg
-      v-if="selfMuted"
+      v-else-if="!selfMuted && selfVolume < 50 && selfVolume > 0"
+      t="1604492613740"
+      class="icon"
+      viewBox="0 0 1024 1024"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      p-id="1682"
+      width="200"
+      height="200"
+      @click="mute"
+    >
+      <path
+        d="M596 139c16.71 16.242 26 38.634 26 62v624c0 48.608-39.423 88-88 88-23.423 0-45.833-9.282-62-26L312.059 727.059A48 48 0 0 0 278.118 713H216c-70.657 0.295-128-57.003-128-128V441c0-70.338 57.343-127.636 128-128h61.198a48 48 0 0 0 33.844-13.962L472 139c34.021-34.576 89.774-34.604 124 0z "
+      ></path>
+      <path
+        d="m719 365C760.867 403.048 785 458.494 785 517.973c0 59.513-24.161 114.988-65.425 152.659-13.052 11.915-33.292 10.994-45.208-2.058-11.796-12.922-11.011-32.888 1.67-44.848l0.388-0.36 0.834-0.768C704.657 597.13 721 559.193 721 517.974c0-41.613-16.656-79.88-44.53-105.352-13.045-11.922-13.956-32.163-2.034-45.209 11.922-13.046 32.163-13.957 45.209-2.035z"
+      />
+    </svg>
+    <svg
+      v-else
       t="1604492655584"
       class="icon"
       viewBox="0 0 1024 1024"
@@ -77,7 +96,7 @@ export default {
     };
   },
   methods: {
-    mute: function() {
+    mute: function () {
       this.selfMuted = !this.selfMuted;
       if (this.selfMuted) {
         this.$emit("change", 0);
@@ -85,7 +104,7 @@ export default {
         this.$emit("change", this.selfVolume);
       }
     },
-    onClick: function(e) {
+    onClick: function (e) {
       this.selfVolume = (e.offsetX / this.$refs.volume.offsetWidth) * 100;
       this.$emit("change", this.selfVolume);
     },
