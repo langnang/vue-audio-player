@@ -10,9 +10,18 @@
 8. 歌词
 9. 后续优化（包括但不限于加载中的进度条动画，加载中的时间显示，音乐列表的滚动条功能）
 
-### 0.1.6
+### 0.1.8
+
+## New Feature
+
+## Bug
+
+- [大音量，小音量，音量为 0 时的图标切换](https://github.com/langnang/vue-audio-player/issues/10)
+- [props 播放模式选择](https://github.com/langnang/vue-audio-player/issues/9)
 
 ### 0.1.5
+
+## New Feature
 
 - 播放、暂停
 - 上一首、下一首

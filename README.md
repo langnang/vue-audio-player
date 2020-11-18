@@ -33,7 +33,11 @@ Vue.use(AudioPlayer);
 ```html
 <template>
   <div>
-    <AudioPlayer :src-list="audioList" />
+    <AudioPlayer
+      :src-list="audioList"
+      @play-prev="onPlayPrev"
+      @play-next="onPlayNext"
+    />
   </div>
 </template>
 
@@ -70,15 +74,16 @@ Vue.use(AudioPlayer);
 
 ## Attributes
 
-| 参数      | 说明                   | 类型    | 默认值 |
-| --------- | ---------------------- | ------- | ------ |
-| src       | 单曲音频源             | String  | -      |
-| loop      | 是否单曲音频源循环播放 | Boolean | false  |
-| src-list  | 多曲音频源             | Array   | -      |
-| src-key   | 多曲音频源关键字       | String  | -      |
-| show-next | 是否显示上一首按钮     | Boolean | false  |
-| show-prev | 是否显示下一首按钮     | Boolean | false  |
-| show-mode | 是否显示模式切换按钮   | Boolean | false  |
+| 参数      | 说明                   | 类型    | 默认值                                   |
+| --------- | ---------------------- | ------- | ---------------------------------------- |
+| src       | 单曲音频源             | String  | -                                        |
+| loop      | 是否单曲音频源循环播放 | Boolean | false                                    |
+| src-list  | 多曲音频源             | Array   | -                                        |
+| src-key   | 多曲音频源关键字       | String  | -                                        |
+| play-mode | 多曲音频播放模式       | String  | single/signle-loop/list/list-loop/random |
+| show-next | 是否显示上一首按钮     | Boolean | false                                    |
+| show-prev | 是否显示下一首按钮     | Boolean | false                                    |
+| show-mode | 是否显示模式切换按钮   | Boolean | false                                    |
 
 ## Events
 
@@ -98,17 +103,6 @@ Vue.use(AudioPlayer);
 | pause     | 暂停   | -     |
 | play-prev | 上一首 | index |
 | play-next | 下一首 | index |
-
-## Data
-
-| 参数         | 说明               | 类型    | 默认值 |
-| ------------ | ------------------ | ------- | ------ |
-| currentIndex | 当前播放的音频索引 | Number  | 0      |
-| isPlaying    | 音频是否正在播放   | Boolean | false  |
-| duration     | 音频持续时间       | Number  | -      |
-| currentTime  | 音频当前播放时间   | Number  | -      |
-
-## Slots
 
 ## 参考
 

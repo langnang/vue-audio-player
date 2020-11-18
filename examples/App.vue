@@ -28,6 +28,7 @@
     <AudioPlayer
       :src-list="audioList"
       :show-mode="true"
+      play-mode="random"
       @play="onPlay"
       @pause="onPause"
       @playing="onPlaying"
